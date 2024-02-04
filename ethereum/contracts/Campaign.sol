@@ -60,6 +60,7 @@ contract Campaign {
 
     function approveRequest(uint index) public {
         Request storage request = requests[index];
+        // we are not going to make copy of that, just access it from persistent one
 
         require(approvers[msg.sender]);
         require(!request.approvals[msg.sender]);
